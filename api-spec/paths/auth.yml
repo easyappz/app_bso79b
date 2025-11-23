@@ -8,7 +8,7 @@ register:
           schema:
             $ref: '../components/schemas/member-create.yml'
     responses:
-      '200':
+      '201':
         $ref: '../components/responses.yml#/AuthSuccess'
 login:
   post:

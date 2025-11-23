@@ -1,10 +1,12 @@
 type: object
-required: [id, member, content, created_at]
+required: [id, member, member_username, content, created_at]
 properties:
   id:
     type: integer
   member:
-    $ref: './member.yml'
+    type: integer
+  member_username:
+    type: string
   content:
     type: string
   created_at:
