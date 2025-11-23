@@ -6,7 +6,8 @@ import React from 'react';
 export const Home = () => {
   return (
     <div data-easytag="id1-src/components/Home/index.jsx">
-      <div>This is home page</div>
+      <h1>Групповой чат (главная страница)</h1>
+      <p>Здесь будет располагаться интерфейс группового текстового чата.</p>
     </div>
   );
 };
