@@ -1,0 +1,33 @@
+profile:
+  get:
+    summary: Получение профиля текущего участника
+    security:
+      - TokenAuth: []
+    responses:
+      '200':
+        description: Данные профиля
+        content:
+          application/json:
+            schema:
+              $ref: '../components/schemas/member.yml'
+      '401':
+        $ref: '../components/responses.yml#/Unauthorized'
+  put:
+    summary: Обновление профиля текущего участника
+    security:
+      - TokenAuth: []
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/member-create.yml'
+    responses:
+      '200':
+        description: Обновлённый профиль
+        content:
+          application/json:
+            schema:
+              $ref: '../components/schemas/member.yml'
+      '401':
+        $ref: '../components/responses.yml#/Unauthorized'

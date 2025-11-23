@@ -1,0 +1,36 @@
+openapi: 3.1.0
+info:
+  $ref: './shared/info.yml'
+servers:
+  $ref: './shared/servers.yml'
+paths:
+  /api/auth/register/:
+    $ref: './paths/auth.yml#/register'
+  /api/auth/login/:
+    $ref: './paths/auth.yml#/login'
+  /api/auth/me/:
+    $ref: './paths/auth.yml#/me'
+  /api/profile/:
+    $ref: './paths/profile.yml#/profile'
+  /api/chat/messages/:
+    $ref: './paths/chat.yml#/messages'
+components:
+  schemas:
+    Member:
+      $ref: './components/schemas/member.yml'
+    MemberCreate:
+      $ref: './components/schemas/member-create.yml'
+    LoginRequest:
+      $ref: './components/schemas/login-request.yml'
+    AuthTokenResponse:
+      $ref: './components/schemas/auth-token-response.yml'
+    ChatMessage:
+      $ref: './components/schemas/chat-message.yml'
+    ChatMessageCreate:
+      $ref: './components/schemas/chat-message-create.yml'
+  parameters:
+    $ref: './components/parameters.yml'
+  responses:
+    $ref: './components/responses.yml'
+  securitySchemes:
+    $ref: './components/security.yml'

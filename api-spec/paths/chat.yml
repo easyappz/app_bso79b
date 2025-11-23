@@ -1,0 +1,35 @@
+messages:
+  get:
+    summary: Получить сообщения группового чата
+    security:
+      - TokenAuth: []
+    responses:
+      '200':
+        description: Список сообщений
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '../components/schemas/chat-message.yml'
+      '401':
+        $ref: '../components/responses.yml#/Unauthorized'
+  post:
+    summary: Отправить сообщение в групповой чат
+    security:
+      - TokenAuth: []
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/chat-message-create.yml'
+    responses:
+      '201':
+        description: Созданное сообщение
+        content:
+          application/json:
+            schema:
+              $ref: '../components/schemas/chat-message.yml'
+      '401':
+        $ref: '../components/responses.yml#/Unauthorized'

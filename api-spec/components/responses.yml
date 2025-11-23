@@ -1,0 +1,8 @@
+AuthSuccess:
+  description: Успешная аутентификация
+  content:
+    application/json:
+      schema:
+        $ref: './schemas/auth-token-response.yml'
+Unauthorized:
+  description: Требуется аутентификация

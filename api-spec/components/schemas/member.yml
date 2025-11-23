@@ -1,0 +1,11 @@
+type: object
+required: [id, username, created_at]
+properties:
+  id:
+    type: integer
+  username:
+    type: string
+    maxLength: 150
+  created_at:
+    type: string
+    format: date-time

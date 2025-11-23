@@ -1,0 +1,12 @@
+type: object
+required: [id, member, content, created_at]
+properties:
+  id:
+    type: integer
+  member:
+    $ref: './member.yml'
+  content:
+    type: string
+  created_at:
+    type: string
+    format: date-time

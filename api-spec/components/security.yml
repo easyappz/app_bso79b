@@ -1,0 +1,4 @@
+TokenAuth:
+  type: http
+  scheme: bearer
+  bearerFormat: Token

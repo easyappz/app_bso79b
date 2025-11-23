@@ -1,0 +1,38 @@
+register:
+  post:
+    summary: Регистрация нового участника
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/member-create.yml'
+    responses:
+      '200':
+        $ref: '../components/responses.yml#/AuthSuccess'
+login:
+  post:
+    summary: Вход участника в систему
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/login-request.yml'
+    responses:
+      '200':
+        $ref: '../components/responses.yml#/AuthSuccess'
+me:
+  get:
+    summary: Текущий аутентифицированный участник
+    security:
+      - TokenAuth: []
+    responses:
+      '200':
+        description: Данные участника
+        content:
+          application/json:
+            schema:
+              $ref: '../components/schemas/member.yml'
+      '401':
+        $ref: '../components/responses.yml#/Unauthorized'
